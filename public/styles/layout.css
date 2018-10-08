@@ -21,6 +21,15 @@ body {
   background-color: #eee;
 }
 
+main {
+  width: 450px;
+  background-color: white;
+  padding: 140px 10px 10px 20px;
+  margin: auto;
+
+}
+
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
