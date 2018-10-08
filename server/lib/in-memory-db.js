@@ -8,3 +8,5 @@ const db = {
 
 module.exports = db;
 
+// console.log(db.tweets);
+console.log(db.tweets[0].user);
