@@ -1,0 +1,41 @@
+
+
+section {
+  padding: 3px 2em;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+
+.new-tweet {
+  background-color: #eee;
+  padding: 10px;
+}
+
+#tweet-title {
+  margin: 1px;
+}
+
+span.counter{
+  position: relative;
+  left: 300px;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+textarea.tweet-text-box {
+  width: 388px;  
+  padding: 5px;
+}
+
+input.tweet-submit-button{
+  background-color: linear-gradient(#eee, red)
+
+}
+hr.tweet-title-line {
+  margin: 1px 0 20px 0;
+  font-size: 10px;
+  height: 0.7px;
+  background-color: black;
+}
