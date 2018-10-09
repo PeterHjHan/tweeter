@@ -1,10 +1,23 @@
 $(document).ready(function () {
-  const textArea = document.querySelector('.tweet-text-box');
+  
+  $('.tweet-text-box').on('keyup', function () {
+    const tweetInputLength = this.value.length;
+    // const defaultCounter = document.querySelector('span.counter').textContent;
+    const defaultCounter = $(this).parents("form").children('span.counter').text();
+ 
 
-  $('.tweet-text-box').on('keyup', function() {
+    console.log( defaultCounter - tweetInputLength);
     
-    console.log(this.value.length); //The this keyword here refers to something else!
+
+
+  
+  
+    
+    
+
+    
+    ;
+
+
   });
 });
-
-//use k
