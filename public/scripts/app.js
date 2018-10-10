@@ -8,23 +8,32 @@ $(() => {
 
   $('form').on('submit', (event) => {
     event.preventDefault();
-    let data = $(event.target).serialize();
+    const data = $(event.target).serialize();
+    const userInput = $('textarea[name=text]').val();
+    const tweetLength = userInput.length;
 
-    $.ajax('/tweets', {
-        method: 'POST',
-        data: data
-      })
-      .then(() => {
-        console.log("hello");
-      })
+    if (tweetLength >= 140) {
+      alert("Your Tweet is too long, you don't know how to count?");
+    } else if (tweetLength === 0){
+      alert("SAY SOMETHING U IDIOT");
+    } else {
+      $.ajax('/tweets', {
+          method: 'POST',
+          data: data
+        })
+        .then(() => {
+          //send the data
+          console.log("hello");
+        })
+    }
   });
 
   function loadTweets() {
-    $.ajax('/tweets').then(function(data) {
-        renderTweet(data);
-      });
+    $.ajax('/tweets').then(function (data) {
+      renderTweet(data);
+    });
   }
-  
+
 
 
 
