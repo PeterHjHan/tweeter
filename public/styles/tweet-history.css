@@ -5,9 +5,29 @@ header{
   margin: 0;
   height: 20%;
   background-color: #eee;
-  line-height: 1.88;
-  position: relative;
+  line-height: 2.5;
+}
+
+#avatar {
+  width: 40px;
+  height: 40px;
   float: left;
+  border-radius: 5px;
+  padding: 5px;
+  
+}
+p.user-name {
+  float: left;
+  margin: 0;
+  font-weight: bold;
+}
+
+p.tweeter-handle {
+  position: relative;
+  float: right;
+  margin: 0;
+  padding: 0 10px;
+  color: grey;
 }
 
 article {
@@ -15,6 +35,11 @@ article {
   border-radius: 5px;
   margin: 2em 0; 
   height: 200px;
+  opacity: 0.8;
+}
+
+article:hover {
+  opacity: 1.0;
 }
 
 p.tweet-log{
@@ -22,34 +47,36 @@ p.tweet-log{
   min-width: 100%;
   position: relative;
   height: 56%;
-  margin: 0;
+  margin: 10px;
 } 
-
-img.avatar {
-  width: 40px;
-  height: 40px;
-  float: left;
-  margin: 0 5px;
-}
 
 hr.footer-hr {
   color: red;
-  margin-top: 150px;
-  margin-bottom:0;
+  margin-top: 125px;
+  margin-bottom:0;  
+}
+
   
+
+.footer-icons {
+  float: right;
+  position: relative;
+
+}
+.logo {
+  width: 20px;
+  height: 20px;
 }
 
 footer{
-
   position: relative;
   bottom: 0;
   left: 0;
   right: 0; 
-  clear: both;
-  padding: 10px 0 0 0;
-  height: 23.24%;
   border-radius: 0 0 4px 4px;
-  padding: 0;
-  background-color: red;
+  height: 16%;
+}
 
+.footer-text {
+  margin: 0 10px;
 }
