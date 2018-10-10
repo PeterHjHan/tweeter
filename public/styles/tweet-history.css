@@ -88,6 +88,8 @@ hr.footer-hr {
   width: 20px;
   height: 20px;
   color: red;
+  float: right;
+  margin: 10px;
 }
 
 footer {

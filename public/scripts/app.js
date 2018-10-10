@@ -33,14 +33,13 @@ function createTweetElement(tweetData){
     let $footer = $('<footer>');
     let $footerText = $('<p>').addClass('footer-text').append(tweetData.created_at);
     let $footerIcons = $('<div>').addClass('footer-icons');
-    let $logos = $('<img>').attr('src','../image/bird.png');
+    let $logos = $('<img>').attr('src', tweetData.user.avatars.small).addClass('logo');
 
   return $header
     .append($avatarImage)
     .append($headerUserName)
     .append($tweeterHandle)
     .append($tweetLog)
-
     .append($footer)
     .append($footerHr)
     .append($footerText)
