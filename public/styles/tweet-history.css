@@ -1,4 +1,55 @@
 
-.tweet-history{
+header{
+  border-radius: 4px 4px 0 0;
+  width: 100%;
+  margin: 0;
+  height: 20%;
+  background-color: #eee;
+  line-height: 1.88;
+  position: relative;
+  float: left;
+}
+
+article {
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 2em 0; 
+  height: 200px;
+}
+
+p.tweet-log{
+  float: left;
+  min-width: 100%;
+  position: relative;
+  height: 56%;
+  margin: 0;
+} 
+
+img.avatar {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 0 5px;
+}
+
+hr.footer-hr {
+  color: red;
+  margin-top: 150px;
+  margin-bottom:0;
+  
+}
+
+footer{
+
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0; 
+  clear: both;
+  padding: 10px 0 0 0;
+  height: 23.24%;
+  border-radius: 0 0 4px 4px;
+  padding: 0;
+  background-color: red;
 
 }
