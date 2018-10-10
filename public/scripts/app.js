@@ -4,23 +4,29 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
-
 $(() => {
 
   $('form').on('submit', (event) => {
     event.preventDefault();
     let data = $(event.target).serialize();
 
-    $.ajax('/tweets', { method: 'POST', data: data})
+    $.ajax('/tweets', {
+        method: 'POST',
+        data: data
+      })
       .then(() => {
-      console.log("hello");
-    })
+        console.log("hello");
+      })
   });
 
   function loadTweets() {
-    //fetching tweets 
+    $.ajax('/tweets').then(function(data) {
+        renderTweet(data);
+      });
   }
+  
+
+
 
 
   // $('form').on('submit', (e) => {
@@ -84,11 +90,14 @@ $(() => {
       .append($footer)
 
   }
+
   function renderTweet(tweetData) {
     tweetData.forEach(function (element) {
       $('#tweets-container').append(createTweetElement(element));
     })
   }
-  // renderTweet(data);
+
+  loadTweets();
+
 
 });
