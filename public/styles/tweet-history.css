@@ -54,7 +54,7 @@ p.tweet-log{
 
 hr.footer-hr {
   color: red;
-  margin-top: 125px;
+  margin-top: 150px;
   margin-bottom:0;  
 }
 
@@ -90,7 +90,7 @@ hr.footer-hr {
   color: red;
 }
 
-footer{
+footer {
   position: relative;
   bottom: 0;
   left: 0;

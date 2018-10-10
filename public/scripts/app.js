@@ -24,7 +24,7 @@ $(() => {
 function createTweetElement(tweetData){
 
     let $header = $('<header>')
-    let $avatarImage = $('<img>').addClass('#avatar').append(tweetData.user.avatars.small)
+    let $avatarImage = $('<img id="avatar">').attr('src', tweetData.user.avatars.small)
     let $headerUserName = $('<p>').addClass('user-name').append(tweetData.user.name)
     let $tweeterHandle = $('<p>').addClass('tweeter-handle').append(tweetData.user.handle)
 
@@ -33,15 +33,16 @@ function createTweetElement(tweetData){
     let $footer = $('<footer>');
     let $footerText = $('<p>').addClass('footer-text').append(tweetData.created_at);
     let $footerIcons = $('<div>').addClass('footer-icons');
-    let $logos = $('<img>').addClass('logo');
+    let $logos = $('<img>').attr('src','../image/bird.png');
 
   return $header
     .append($avatarImage)
     .append($headerUserName)
     .append($tweeterHandle)
     .append($tweetLog)
-    .append($footerHr)
+
     .append($footer)
+    .append($footerHr)
     .append($footerText)
     .append($footerIcons)
     .append($logos)
