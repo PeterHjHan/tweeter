@@ -68,6 +68,11 @@ function createTweetElement(tweetData){
                          .addClass('tweeter-handle')
                          .append(tweetData.user.handle);
 
+    let $header = $('<header>')
+                         .append($avatarImage)
+                         .append($headerUserName)
+                         .append($tweeterHandle)
+
     //body references                
     
     let $tweetLog = $('<p>')
@@ -84,15 +89,10 @@ function createTweetElement(tweetData){
                 .attr('src', tweetData.user.avatars.small)
                 .addClass('logo');
 
-    let $header = $('<header>')
-                  .append($avatarImage)
-                  .append($headerUserName)
-                  .append($tweeterHandle)
-
-
     let $footer = $('<footer>')
                   .append($footerText)
                   .append($logos)
+
     return $article
           .append($header)
           .append($tweetLog)
@@ -104,9 +104,9 @@ function renderTweet(tweetData) {
   tweetData.forEach(function (element) {
     $('#tweets-container').append(createTweetElement(element));
   })
-}
+  }
 
-var $tweet = renderTweet(data);
-$('#tweets-container').append($tweet); 
+  renderTweet(data);
+
 });
 
