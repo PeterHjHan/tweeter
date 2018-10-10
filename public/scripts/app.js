@@ -74,31 +74,29 @@ function createTweetElement(tweetData){
                     .addClass('tweet-log')
                     .append(tweetData.content.text)
     
-    let $footerHr = $('<hr>')
-                    .addClass("footer-hr")
-
-    let $footer = $('<footer>');
 
     let $footerText = $('<p>')
-                      .addClass('footer-text')
-                      .append(tweetData.created_at);
+                     .addClass('footer-text')
+                     .append(tweetData.created_at);
     
     let $footerIcons = $('<div>')
-                       .addClass('footer-icons');
-
+    .addClass('footer-icons');
+    
     let $logos = $('<img>')
-                 .attr('src', tweetData.user.avatars.small)
-                 .addClass('logo');
-
-  return $article
+    .attr('src', tweetData.user.avatars.small)
+    .addClass('logo');
+                    
+    let $footer = $('<footer>')
+                  .append($footerText)
+                  .append($logos)
+    return $article
     .append($header)
-
     .append($tweetLog)
     .append($footer)
-    .append($footerHr)
-    .append($footerText)
+    // .append($footerHr)
+    // .append($footerText)
     // .append($footerIcons)
-    .append($logos)
+    // .append($logos)
    
 }
 

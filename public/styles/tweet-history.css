@@ -56,13 +56,16 @@ p.tweet-log{
   margin: 10px;
   padding: 10px;
   line-height: 1.1;
+  width: 95%;
 
 } 
 
 hr.footer-hr {
   color: red;
-  margin-top: 90px;
+  margin-top: 120px;
   margin-bottom:0;  
+  width: 100%;
+  z-index: 0;
 }
 
 .logo {
