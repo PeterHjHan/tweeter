@@ -54,7 +54,9 @@ $(() => {
 function createTweetElement(tweetData){
 
     let $article = $('<article>');
+
     
+    //header references
     let $avatarImage = $('<img id="avatar">')
                       .attr('src', tweetData.user.avatars.small);
     
@@ -65,39 +67,37 @@ function createTweetElement(tweetData){
     let $tweeterHandle = $('<p>')
                          .addClass('tweeter-handle')
                          .append(tweetData.user.handle);
+
+    //body references                
+    
+    let $tweetLog = $('<p>')
+                    .addClass('tweet-log')
+                    .append(tweetData.content.text)
+
+    //footer references
+
+    let $footerText = $('<p>')
+                      .addClass('footer-text')
+                      .append(tweetData.created_at);
+    
+    let $logos = $('<img>')
+                .attr('src', tweetData.user.avatars.small)
+                .addClass('logo');
+
     let $header = $('<header>')
                   .append($avatarImage)
                   .append($headerUserName)
                   .append($tweeterHandle)
 
-    let $tweetLog = $('<p>')
-                    .addClass('tweet-log')
-                    .append(tweetData.content.text)
-    
 
-    let $footerText = $('<p>')
-                     .addClass('footer-text')
-                     .append(tweetData.created_at);
-    
-    let $footerIcons = $('<div>')
-    .addClass('footer-icons');
-    
-    let $logos = $('<img>')
-    .attr('src', tweetData.user.avatars.small)
-    .addClass('logo');
-                    
     let $footer = $('<footer>')
                   .append($footerText)
                   .append($logos)
     return $article
-    .append($header)
-    .append($tweetLog)
-    .append($footer)
-    // .append($footerHr)
-    // .append($footerText)
-    // .append($footerIcons)
-    // .append($logos)
-   
+          .append($header)
+          .append($tweetLog)
+          .append($footer)
+
 }
 
 function renderTweet(tweetData) {
