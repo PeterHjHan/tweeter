@@ -22,8 +22,7 @@ $(() => {
           data: data
         })
         .then(() => {
-          //send the data
-          console.log("hello");
+          $('#tweets-container').append()
         })
     }
   });
