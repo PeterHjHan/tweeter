@@ -54,23 +54,45 @@ $(() => {
 function createTweetElement(tweetData){
 
     let $article = $('<article>');
+    
+    let $avatarImage = $('<img id="avatar">')
+                      .attr('src', tweetData.user.avatars.small);
+    
+    let $headerUserName = $('<p>')
+                          .addClass('user-name')
+                          .append(tweetData.user.name);
+    
+    let $tweeterHandle = $('<p>')
+                         .addClass('tweeter-handle')
+                         .append(tweetData.user.handle);
     let $header = $('<header>')
-    let $avatarImage = $('<img id="avatar">').attr('src', tweetData.user.avatars.small)
-    let $headerUserName = $('<p>').addClass('user-name').append(tweetData.user.name)
-    let $tweeterHandle = $('<p>').addClass('tweeter-handle').append(tweetData.user.handle)
+                  .append($avatarImage)
+                  .append($headerUserName)
+                  .append($tweeterHandle)
 
-    let $tweetLog = $('<p>').addClass('tweet-log').append(tweetData.content.text)
-    let $footerHr = $('<hr>').addClass("footer-hr")
+    let $tweetLog = $('<p>')
+                    .addClass('tweet-log')
+                    .append(tweetData.content.text)
+    
+    let $footerHr = $('<hr>')
+                    .addClass("footer-hr")
+
     let $footer = $('<footer>');
-    let $footerText = $('<p>').addClass('footer-text').append(tweetData.created_at);
-    let $footerIcons = $('<div>').addClass('footer-icons');
-    let $logos = $('<img>').attr('src', tweetData.user.avatars.small).addClass('logo');
+
+    let $footerText = $('<p>')
+                      .addClass('footer-text')
+                      .append(tweetData.created_at);
+    
+    let $footerIcons = $('<div>')
+                       .addClass('footer-icons');
+
+    let $logos = $('<img>')
+                 .attr('src', tweetData.user.avatars.small)
+                 .addClass('logo');
 
   return $article
     .append($header)
-    .append($avatarImage)
-    .append($headerUserName)
-    .append($tweeterHandle)
+
     .append($tweetLog)
     .append($footer)
     .append($footerHr)
