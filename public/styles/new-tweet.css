@@ -6,7 +6,6 @@ section {
   border: 1px solid grey;
 }
 
-
 .new-tweet {
   background-color: #eee;
   padding: 10px;
@@ -16,6 +15,10 @@ section {
   margin: 1px;
 }
 
+.changeTextToRed {
+  color: red;
+}
+
 span.counter{
   position: relative;
   left: 300px;
@@ -23,6 +26,7 @@ span.counter{
   font-weight: bold;
   font-size: 13px;
 }
+
 
 textarea.tweet-text-box {
   width: 388px;  

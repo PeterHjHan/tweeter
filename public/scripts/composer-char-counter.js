@@ -1,11 +1,14 @@
-$(document).ready(function () {
+$(() => {
   
   $('.tweet-text-box').on('keyup', function () {
+    const tweetInputLength = this.value.length;
     const defaultCounter = $(this).parents("form").children('span.counter');
-    $(defaultCounter).text(defaultCounter.text() -1);
-      if(defaultCounter < 0) {
-        $(defaultCounter.text()).css({"color": "red"});
-      }
+    const textCounter = $(defaultCounter).text(140 - tweetInputLength);
 
+    if($(defaultCounter).text() < 0) {
+      $(textCounter).addClass("changeTextToRed");
+    } else {
+      $(textCounter).removeClass("changeTextToRed");
+    }
   });
 });
