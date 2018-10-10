@@ -1,3 +1,5 @@
+
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -22,14 +24,15 @@ $(() => {
           data: data
         })
         .then(() => {
-          $('#tweets-container').append()
+          $('#tweets-container').empty();
+          loadTweets();
         })
     }
   });
 
   function loadTweets() {
     $.ajax('/tweets').then(function (data) {
-      renderTweet(data);
+      renderTweet(data.reverse());
     });
   }
 
