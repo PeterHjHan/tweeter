@@ -19,17 +19,35 @@
      "created_at": 1461116232227
    }
 
-   var $tweet = createTweetElement(tweetData);
-
-   // Test / driver code (temporary)
-   console.log($tweet); // to see what it looks like
-   $('p.tweet-log').append($tweet); // t
-
 $(() => {
 
-// const $tweet = function createTweetElement(tweetData){
+function createTweetElement(tweetData){
 
-// }
+    let $header = $('<header>')
+    let $avatarImage = $('<img>').addClass('#avatar').append(tweetData.user.avatars.small)
+    let $headerUserName = $('<p>').addClass('user-name').append(tweetData.user.name)
+    let $tweeterHandle = $('<p>').addClass('tweeter-handle').append(tweetData.user.handle)
 
+    let $tweetLog = $('<p>').addClass('tweet-log').append(tweetData.content.text)
+    let $footerHr = $('<hr>').addClass("footer-hr")
+    let $footer = $('<footer>');
+    let $footerText = $('<p>').addClass('footer-text').append(tweetData.created_at);
+    let $footerIcons = $('<div>').addClass('footer-icons');
+    let $logos = $('<img>').addClass('logo');
+
+  return $header
+    .append($avatarImage)
+    .append($headerUserName)
+    .append($tweeterHandle)
+    .append($tweetLog)
+    .append($footerHr)
+    .append($footer)
+    .append($footerText)
+    .append($footerIcons)
+    .append($logos)
+   
+}
+var $tweet = createTweetElement(tweetData);
+$('#tweets-container').append($tweet); 
 });
 
