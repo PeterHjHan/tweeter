@@ -56,16 +56,37 @@ hr.footer-hr {
   margin-bottom:0;  
 }
 
-  
+
 
 .footer-icons {
+  border: none;
   float: right;
-  position: relative;
-
+  padding: 0 10px;
+	position: relative;
+	box-sizing: border-box;
+	transition: all 500ms ease; 
 }
+
+.footer-icons:before {
+	content:'';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 0px;
+	height: 42px;
+	background: rgba(255,255,255,0.3);
+	border-radius: 5px;
+	transition: all 2s ease;
+} 
+.footer-icons:hover:before {
+	width: 100%;
+}
+
+
 .logo {
   width: 20px;
   height: 20px;
+  color: red;
 }
 
 footer{
@@ -79,4 +100,5 @@ footer{
 
 .footer-text {
   margin: 0 10px;
+  float:left;
 }
