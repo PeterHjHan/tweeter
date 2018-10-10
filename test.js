@@ -1,8 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 const data = [
   {
     "user": {
@@ -49,44 +44,18 @@ const data = [
     "created_at": 1461113796368
   }
 ];
-$(() => {
 
-function createTweetElement(tweetData){
 
-    let $article = $('<article>');
-    let $header = $('<header>')
-    let $avatarImage = $('<img id="avatar">').attr('src', tweetData.user.avatars.small)
-    let $headerUserName = $('<p>').addClass('user-name').append(tweetData.user.name)
-    let $tweeterHandle = $('<p>').addClass('tweeter-handle').append(tweetData.user.handle)
-
-    let $tweetLog = $('<p>').addClass('tweet-log').append(tweetData.content.text)
-    let $footerHr = $('<hr>').addClass("footer-hr")
-    let $footer = $('<footer>');
-    let $footerText = $('<p>').addClass('footer-text').append(tweetData.created_at);
-    let $footerIcons = $('<div>').addClass('footer-icons');
-    let $logos = $('<img>').attr('src', tweetData.user.avatars.small).addClass('logo');
-
-  return $article
-    .append($header)
-    .append($avatarImage)
-    .append($headerUserName)
-    .append($tweeterHandle)
-    .append($tweetLog)
-    .append($footer)
-    .append($footerHr)
-    .append($footerText)
-    .append($footerIcons)
-    .append($logos)
-   
+function createEach(data) {
+  username = data.user.name;
+  return username;
 }
 
-function renderTweet(tweetData) {
-  tweetData.forEach(function (element) {
-    $('#tweets-container').append(createTweetElement(element));
-  })
+function createAll(data){
+  data.forEach(function (element, index) {
+    console.log(createEach(element));
+  }) 
 }
 
-var $tweet = renderTweet(data);
-$('#tweets-container').append($tweet); 
-});
+console.log(createAll(data));
 
