@@ -97,7 +97,7 @@ function createTweetElement(tweetData){
     .append($footer)
     .append($footerHr)
     .append($footerText)
-    .append($footerIcons)
+    // .append($footerIcons)
     .append($logos)
    
 }
