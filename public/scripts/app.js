@@ -14,11 +14,11 @@ $(() => {
     let userInput = $('textarea[name=text]').val();
     const tweetLength = userInput.length;
 
-
     if (tweetLength >= 140) {
-      alert("Your Tweet is too long, you don't know how to count?");
+      $('.error-message').text("ERROR: You are tweeting too much");
     } else if (tweetLength === 0){
-      alert("SAY SOMETHING U IDIOT");
+      // alert("NO")
+      $('.error-message').text("hello");
     } else {
       $.ajax('/tweets', {
           method: 'POST',
@@ -28,6 +28,7 @@ $(() => {
           $.ajax('/tweets').then(() => {
             loadTweets();
             $('textarea[name=text]').val('')
+            //TODO: need to fix the text length, does not return to 140
           });
         })
     }

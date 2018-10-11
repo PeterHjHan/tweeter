@@ -16,7 +16,7 @@ html {
  * Global layout stuff
  */
 
-p.error-message {
+.error-message {
   background-color: red;
 }
 
