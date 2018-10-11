@@ -11,7 +11,7 @@ $(() => {
   $('form').on('submit', (event) => {
     event.preventDefault();
     const data = $(event.target).serialize();
-    const userInput = $('textarea[name=text]').val();
+    let userInput = $('textarea[name=text]').val();
     const tweetLength = userInput.length;
 
     if (tweetLength >= 140) {
@@ -24,8 +24,10 @@ $(() => {
           data: data
         })
         .then(() => {
-          $('#tweets-container').empty();
-          loadTweets();
+          $.ajax('/tweets').then(() => {
+            loadTweets();
+            $('textarea[name=text]').val('')
+          });
         })
     }
   });
@@ -35,23 +37,6 @@ $(() => {
       renderTweet(data.reverse());
     });
   }
-
-
-
-
-
-  // $('form').on('submit', (e) => {
-  //   e.preventDefault();
-
-  //   // 1. Capture data the user enetered
-  //   let data = $(e.target).serialize();
-
-  //   // 2. Submit using ajax
-  //   $.ajax('/products', {method: 'POST', data: data}).then(() => {
-  //     $('ul#product-list').empty();
-  //     loadAndRenderProduct();
-  //   });
-  // });
 
   function createTweetElement(tweetData) {
 
@@ -103,9 +88,11 @@ $(() => {
   }
 
   function renderTweet(tweetData) {
+    $('#tweets-container').empty();
     tweetData.forEach(function (element) {
       $('#tweets-container').append(createTweetElement(element));
     })
+ 
   }
 
   loadTweets();
