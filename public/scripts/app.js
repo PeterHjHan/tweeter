@@ -64,8 +64,7 @@ $(() => {
     //body references                
 
     let $tweetLog = $('<p>')
-      .addClass('tweet-log')
-      .text(tweetData.content.text)
+      .text(tweetData.content.text).addClass('tweet-log')
 
     //footer references
 

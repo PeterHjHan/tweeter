@@ -36,4 +36,5 @@
 .compose-button:hover {
   background-color: white;
   color:black;
+  cursor: -webkit-grab; cursor: grab;
 }
