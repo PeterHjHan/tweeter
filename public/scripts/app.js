@@ -95,7 +95,6 @@ $(() => {
     tweetData.forEach(function (element) {
       $('#tweets-container').append(createTweetElement(element));
     })
- 
   }
 
   $('.compose-button').click(function() {
