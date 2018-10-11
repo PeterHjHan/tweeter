@@ -17,7 +17,11 @@ html {
  */
 
 .error-message {
-  background-color: red;
+  background-color: #ffb2b2ed;
+  border-radius: 2px;
+  border: 1px solid red;
+  display: none;
+  padding: 0 0 0 5px;
 }
 
 body {

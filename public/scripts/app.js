@@ -15,10 +15,11 @@ $(() => {
     const tweetLength = userInput.length;
 
     if (tweetLength >= 140) {
-      $('.error-message').text("ERROR: You are tweeting too much");
+      $('.error-message').text("ERROR: You are tweeting too much").slideDown()
+  ;
     } else if (tweetLength === 0){
       // alert("NO")
-      $('.error-message').text("hello");
+      $('.error-message').text("ERROR: You must say something").slideDown();
     } else {
       $.ajax('/tweets', {
           method: 'POST',
@@ -26,6 +27,7 @@ $(() => {
         })
         .then(() => {
           $.ajax('/tweets').then(() => {
+            $('.error-message').slideUp();
             loadTweets();
             $('textarea[name=text]').val('')
             //TODO: need to fix the text length, does not return to 140
