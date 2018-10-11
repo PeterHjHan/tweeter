@@ -12,11 +12,8 @@ $(() => {
     event.preventDefault();
     const data = $(event.target).serialize();
     let userInput = $('textarea[name=text]').val();
-    let txt = $('tweet-text-box').text(userInput);
     const tweetLength = userInput.length;
 
-    console.log(userInput);
-    console.log(txt);
 
     if (tweetLength >= 140) {
       alert("Your Tweet is too long, you don't know how to count?");
@@ -25,7 +22,7 @@ $(() => {
     } else {
       $.ajax('/tweets', {
           method: 'POST',
-          data: data
+          data: data,
         })
         .then(() => {
           $.ajax('/tweets').then(() => {
@@ -68,7 +65,7 @@ $(() => {
 
     let $tweetLog = $('<p>')
       .addClass('tweet-log')
-      .append(tweetData.content.text)
+      .text(tweetData.content.text)
 
     //footer references
 
