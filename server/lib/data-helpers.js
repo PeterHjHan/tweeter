@@ -15,6 +15,12 @@ module.exports = function makeDataHelpers(db) {
         if (err) throw err;
         callback(null, result.sort(sortNewestFirst))
       })
+    },
+
+    deleteTweet: function (existingTweet, callback) {
+      db.collection("tweets").deleteOne(existingTweet);
+      callback(null, true);
     }
+
   };
 };
