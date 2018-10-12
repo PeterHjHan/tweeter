@@ -65,10 +65,10 @@ $(() => {
       .addClass('footer-text')
       .append(moment(tweetData.created_at).fromNow());
     let $logos = $('<ul>')
-      .append('<li>&#9825')
-      .append('<li>&#9873')
-      .append('<li>&#8634')
-      .addClass('logo');
+    .append(`<li><i class="fas fa-heart"></i></li>`)
+    .append(`<li><i class="fas fa-retweet"></i></li>`)
+    .append(`<li><i class="fas fa-flag"></i></li>`)
+    .addClass('logo');
 
     let $footer = $('<footer>')
       .append($footerText)
@@ -90,6 +90,6 @@ $(() => {
   $('.compose-button').click(function() {
     $('.new-tweet').slideToggle("slow");    
   })
-  
+
   loadTweets();
 });
