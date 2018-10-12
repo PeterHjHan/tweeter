@@ -64,9 +64,10 @@ $(() => {
     let $footerText = $('<p>')
       .addClass('footer-text')
       .append(moment(tweetData.created_at).fromNow());
-
-    let $logos = $('<img>')
-      .attr('src', tweetData.user.avatars.small)
+    let $logos = $('<ul>')
+      .append('<li>&#9825')
+      .append('<li>&#9873')
+      .append('<li>&#8634')
       .addClass('logo');
 
     let $footer = $('<footer>')
