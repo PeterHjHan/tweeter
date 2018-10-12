@@ -19,9 +19,9 @@ $(() => {
         .then(() => {
           $.ajax('/tweets').then(() => {
             $('.error-message').slideUp();
+            $('span.counter').text('140');
+            $('textarea[name=text]').val('');
             loadTweets();
-            $('textarea[name=text]').val('')
-            //TODO: need to fix the text length, does not return to 140
           });
         })
     }
@@ -48,6 +48,9 @@ $(() => {
     let $tweeterHandle = $('<p>')
       .addClass('tweeter-handle')
       .append(tweetData.user.handle);
+
+    let $deleteButton = $('<button>')
+
 
     let $header = $('<header>')
       .append($avatarImage)
