@@ -1,12 +1,5 @@
 
-
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-$(() => {
+$(() => { 
 
   $('form').on('submit', (event) => {
     event.preventDefault();
@@ -15,10 +8,8 @@ $(() => {
     const tweetLength = userInput.length;
 
     if (tweetLength >= 140) {
-      $('.error-message').text("ERROR: You are tweeting too much").slideDown()
-  ;
+      $('.error-message').text("ERROR: You are tweeting too much").slideDown();
     } else if (tweetLength === 0){
-      // alert("NO")
       $('.error-message').text("ERROR: You must say something").slideDown();
     } else {
       $.ajax('/tweets', {
@@ -46,7 +37,6 @@ $(() => {
 
     let $article = $('<article>');
 
-
     //header references
     let $avatarImage = $('<img id="avatar">')
       .attr('src', tweetData.user.avatars.small);
@@ -73,7 +63,7 @@ $(() => {
 
     let $footerText = $('<p>')
       .addClass('footer-text')
-      .append(tweetData.created_at);
+      .append(moment(tweetData.created_at).fromNow());
 
     let $logos = $('<img>')
       .attr('src', tweetData.user.avatars.small)
@@ -87,7 +77,6 @@ $(() => {
       .append($header)
       .append($tweetLog)
       .append($footer)
-
   }
 
   function renderTweet(tweetData) {
@@ -98,13 +87,8 @@ $(() => {
   }
 
   $('.compose-button').click(function() {
-    $('.new-tweet').slideToggle("slow");
-    
-
-    
+    $('.new-tweet').slideToggle("slow");    
   })
-
+  
   loadTweets();
-
-
 });
