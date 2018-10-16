@@ -18,3 +18,6 @@ Tweeter is a simple, single-page Twitter clone using jQuery, HTML, CSS, AJAX and
 - MongoDB
 
 ## Screenshot 
+
+!["Tweet history box"](https://github.com/PeterHjHan/tweeter/blob/master/public/images/Tweeter_main.png)
+!["Tweet Compose box"](https://github.com/PeterHjHan/tweeter/blob/master/public/images/Tweeter_tweet.png)
