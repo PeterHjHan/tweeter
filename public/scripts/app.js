@@ -49,9 +49,6 @@ $(() => {
       .addClass('tweeter-handle')
       .append(tweetData.user.handle);
 
-    let $deleteButton = $('<button>')
-
-
     let $header = $('<header>')
       .append($avatarImage)
       .append($headerUserName)
@@ -91,7 +88,7 @@ $(() => {
   }
 
   $('.compose-button').click(function() {
-    $('.new-tweet').slideToggle("slow");    
+    $('.new-tweet').slideToggle("slow").focus();    
   })
 
   loadTweets();
