@@ -57,7 +57,7 @@ $(() => {
     //body references                
 
     let $tweetLog = $('<p>')
-      .text(tweetData.content.text).addClass('tweet-log')
+      .text(tweetData.content.text).addClass('tweet-log');
 
     //footer references
 
@@ -88,7 +88,9 @@ $(() => {
   }
 
   $('.compose-button').click(function() {
-    $('.new-tweet').slideToggle("slow").focus();    
+    
+    $('.new-tweet').slideToggle(300);
+    $('textarea').focus();   
   })
 
   loadTweets();
