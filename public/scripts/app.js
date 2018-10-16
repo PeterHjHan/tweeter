@@ -1,5 +1,4 @@
-
-$(() => { 
+$(() => {
 
   $('form').on('submit', (event) => {
     event.preventDefault();
@@ -9,7 +8,7 @@ $(() => {
 
     if (tweetLength >= 140) {
       $('.error-message').text("ERROR: You are tweeting too much").slideDown();
-    } else if (tweetLength === 0){
+    } else if (tweetLength === 0) {
       $('.error-message').text("ERROR: You must say something").slideDown();
     } else {
       $.ajax('/tweets', {
@@ -65,10 +64,10 @@ $(() => {
       .addClass('footer-text')
       .append(moment(tweetData.created_at).fromNow());
     let $logos = $('<ul>')
-    .append(`<li><i class="fas fa-heart"></i></li>`)
-    .append(`<li><i class="fas fa-retweet"></i></li>`)
-    .append(`<li><i class="fas fa-flag"></i></li>`)
-    .addClass('logo');
+      .append(`<li><i class="fas fa-heart"></i></li>`)
+      .append(`<li><i class="fas fa-retweet"></i></li>`)
+      .append(`<li><i class="fas fa-flag"></i></li>`)
+      .addClass('logo');
 
     let $footer = $('<footer>')
       .append($footerText)
@@ -87,10 +86,9 @@ $(() => {
     })
   }
 
-  $('.compose-button').click(function() {
-    
+  $('.compose-button').click(function () {
     $('.new-tweet').slideToggle(300);
-    $('textarea').focus();   
+    $('textarea').focus();
   })
 
   loadTweets();
